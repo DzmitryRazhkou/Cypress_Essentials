@@ -1,0 +1,10 @@
+{
+  "specName": "cypress/integration/tests/18. Shadow root.js",
+  "title": "Cypress Shadow",
+  "suiteName": "CY Practise",
+  "testName": "CY Practise Cypress Shadow",
+  "testError": "Timed out after waiting `30000ms` for your remote page to load.\n\nYour page did not fire its `load` event within `30000ms`.\n\nYou can try increasing the `pageLoadTimeout` value in `cypress.config.js` to wait longer.\n\nBrowsers will not fire the `load` event until all stylesheets and scripts are done downloading.\n\nWhen this `load` event occurs, Cypress will continue running commands.\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `CY Practise`",
+  "testCommands": [
+    "visit https://selectorshub.com/xpath-practice-page/"
+  ]
+}

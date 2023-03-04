@@ -1,0 +1,12 @@
+{
+  "specName": "cypress/integration/tests/22. Select drop-down.js",
+  "title": "Cypress Drop Down Static",
+  "suiteName": "CY Practise",
+  "testName": "CY Practise Cypress Drop Down Static",
+  "testError": "Timed out retrying after 20100ms: Cannot read properties of undefined (reading 'options')",
+  "testCommands": [
+    "visit https://rahulshettyacademy.com/AutomationPractice/",
+    "get #dropdown-class-example",
+    "select Option3"
+  ]
+}

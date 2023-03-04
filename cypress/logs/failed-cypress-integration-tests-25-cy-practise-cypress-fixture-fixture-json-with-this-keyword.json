@@ -1,0 +1,8 @@
+{
+  "specName": "cypress/integration/tests/25. Fixtures.js",
+  "title": "Cypress Fixture - Fixture JSON with 'This' Keyword",
+  "suiteName": "CY Practise",
+  "testName": "CY Practise Cypress Fixture - Fixture JSON with 'This' Keyword",
+  "testError": "userDetails is not defined",
+  "testCommands": []
+}

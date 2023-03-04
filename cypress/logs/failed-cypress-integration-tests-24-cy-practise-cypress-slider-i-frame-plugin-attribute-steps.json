@@ -1,0 +1,17 @@
+{
+  "specName": "cypress/integration/tests/24. Sliders.js",
+  "title": "Cypress Slider iFrame Plugin - Attribute, Steps",
+  "suiteName": "CY Practise",
+  "testName": "CY Practise Cypress Slider iFrame Plugin - Attribute, Steps",
+  "testError": "Timed out retrying after 20000ms: Expected to find element: `#slider-range span:nth-child(2)`, but never found it.",
+  "testCommands": [
+    "visit https://www.globalsqa.com/demo-site/sliders/#Steps",
+    "uncaught exception TagError: adsbygoogle.push() error: Only one 'enable_page_level_ads' allowed per page.",
+    "get .resp-tab-content-active > p > .demo-frame",
+    "its .0.contentDocument.body",
+    "assert expected **<body>** not to be **empty**",
+    "wrap <body>",
+    "within ",
+    "get #slider-range span:nth-child(2)"
+  ]
+}

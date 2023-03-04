@@ -1,0 +1,8 @@
+{
+  "specName": "cypress/integration/tests/26. Fixtures_Allias_Multiple data.js",
+  "title": "Cypress Fixture - Fixture Alias",
+  "suiteName": "CY Practise",
+  "testName": "CY Practise Cypress Fixture - Fixture Alias",
+  "testError": "(void 0) is undefined",
+  "testCommands": []
+}

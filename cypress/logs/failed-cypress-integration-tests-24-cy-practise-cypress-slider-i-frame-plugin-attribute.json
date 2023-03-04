@@ -1,0 +1,13 @@
+{
+  "specName": "cypress/integration/tests/24. Sliders.js",
+  "title": "Cypress Slider iFrame Plugin - Attribute, ",
+  "suiteName": "CY Practise",
+  "testName": "CY Practise Cypress Slider iFrame Plugin - Attribute, ",
+  "testError": "Timed out retrying after 20000ms: `cy.its()` errored because the property: `0.contentDocument.body` does not exist on your subject.\n\n`cy.its()` waited for the specified property `0.contentDocument.body` to exist, but it never did.\n\nIf you do not expect the property `0.contentDocument.body` to exist, then add an assertion such as:\n\n`cy.wrap({ foo: 'bar' }).its('quux').should('not.exist')`",
+  "testCommands": [
+    "visit https://www.globalsqa.com/demo-site/sliders/#Range",
+    "uncaught exception TagError: adsbygoogle.push() error: Only one 'enable_page_level_ads' allowed per page.",
+    "get .resp-tab-content-active > p > .demo-frame",
+    "its .0.contentDocument.body"
+  ]
+}

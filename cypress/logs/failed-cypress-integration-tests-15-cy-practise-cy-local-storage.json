@@ -1,0 +1,11 @@
+{
+  "specName": "cypress/integration/tests/15. Cypress window URI Properties.js",
+  "title": "CY Local Storage",
+  "suiteName": "CY Practise",
+  "testName": "CY Practise CY Local Storage",
+  "testError": "Timed out retrying after 20000ms: expected 3 to deeply equal 2",
+  "testCommands": [
+    "window ",
+    "assert expected **2** to deeply equal **2**"
+  ]
+}

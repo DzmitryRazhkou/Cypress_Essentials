@@ -1,0 +1,15 @@
+{
+  "specName": "cypress/integration/tests/24. Sliders.js",
+  "title": "Cypress Slider iFrame Plugin - Value",
+  "suiteName": "CY Practise",
+  "testName": "CY Practise Cypress Slider iFrame Plugin - Value",
+  "testError": "Timed out retrying after 20000ms: expected '<input.range-slider.range-slider--primary>' to have text '95', but the text was ''",
+  "testCommands": [
+    "visit https://demoqa.com/slider",
+    "uncaught exception Error: Script error.\n\nCypress detected that an uncaught error was thrown from a cross origin script.\n\nWe cannot provide you the stack trace, line number, or file where this error occurred.\n\nCheck your Developer Tools Console for the actual error - it should be printed there.\n\nIt's possible to enable debugging these scripts by adding the `crossorigin` attribute and setting a CORS header.",
+    "get .range-slider",
+    "invoke .val()",
+    "trigger change",
+    "assert expected **<input.range-slider.range-slider--primary>** to have text **'95'**, but the text was **''**"
+  ]
+}

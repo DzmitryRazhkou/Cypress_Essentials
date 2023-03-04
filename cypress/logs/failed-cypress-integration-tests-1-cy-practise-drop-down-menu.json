@@ -1,0 +1,14 @@
+{
+  "specName": "cypress/integration/tests/1. Drop-down menu.js",
+  "title": "Drop Down Menu",
+  "suiteName": "CY Practise",
+  "testName": "CY Practise Drop Down Menu",
+  "testError": "Timed out retrying after 20050ms: `cy.select()` failed because this element:\n\n`<select>...</select>`\n\nis being covered by another element:\n\n`<a href=\"https://www.globalsqa.com/cheatsheets/\">CheatSh...</a>`\n\nFix this problem, or use {force: true} to disable error checking.",
+  "testCommands": [
+    "visit https://www.globalsqa.com/demo-site/select-dropdown-menu/",
+    "uncaught exception TagError: adsbygoogle.push() error: Only one 'enable_page_level_ads' allowed per page.",
+    "uncaught exception SyntaxError: Unexpected token '&'",
+    "get select",
+    "select Ukraine"
+  ]
+}

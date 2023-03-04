@@ -1,0 +1,10 @@
+{
+  "specName": "cypress/integration/tests/26. Fixtures_this.js",
+  "title": "Cypress Fixture - Fixture JSON on the Test Level",
+  "suiteName": "CY Practise",
+  "testName": "CY Practise Cypress Fixture - Fixture JSON on the Test Level",
+  "testError": "(void 0) is undefined\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `CY Practise`",
+  "testCommands": [
+    "then function(){}"
+  ]
+}

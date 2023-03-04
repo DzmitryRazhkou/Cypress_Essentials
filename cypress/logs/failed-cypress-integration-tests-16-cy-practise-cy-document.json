@@ -1,0 +1,12 @@
+{
+  "specName": "cypress/integration/tests/16. Cy.document, cy.title.js",
+  "title": "cy.document",
+  "suiteName": "CY Practise",
+  "testName": "CY Practise cy.document",
+  "testError": "`cy.should()` failed because you invoked a command inside the callback. `cy.should()` retries the inner function, which would result in commands being added to the queue multiple times. Use `cy.then()` instead of `cy.should()`, or move any commands outside the callback function.\n\nThe command invoked was:\n\n  > `cy.log()`",
+  "testCommands": [
+    "visit https://www.globalsqa.com/",
+    "uncaught exception TagError: adsbygoogle.push() error: Only one 'enable_page_level_ads' allowed per page.",
+    "document "
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "specName": "cypress/integration/tests/21. File upload.js",
+  "title": "Cypress File Upload",
+  "suiteName": "CY Practise",
+  "testName": "CY Practise Cypress File Upload",
+  "testError": "Timed out retrying after 20000ms: Expected to find element: `#file-submit`, but never found it.",
+  "testCommands": [
+    "visit http://localhost:7080/upload",
+    "get #file-upload",
+    "attachFile saucedemo.json",
+    "get #file-submit",
+    "click ",
+    "form sub --submitting form--",
+    "page load --waiting for new page to load--",
+    "get #file-submit",
+    "assert expected **#file-submit** to have text **sausedemo.json**, but the text was **''**"
+  ]
+}

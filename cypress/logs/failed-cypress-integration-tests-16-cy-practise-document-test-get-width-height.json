@@ -1,0 +1,13 @@
+{
+  "specName": "cypress/integration/tests/16. Cy.document, cy.title.js",
+  "title": "Document Test - Get Width & Height",
+  "suiteName": "CY Practise",
+  "testName": "CY Practise Document Test - Get Width & Height",
+  "testError": "docObj.heigth is not a function",
+  "testCommands": [
+    "visit https://www.globalsqa.com/",
+    "uncaught exception TagError: adsbygoogle.push() error: Only one 'enable_page_level_ads' allowed per page.",
+    "document ",
+    "then function(){}"
+  ]
+}

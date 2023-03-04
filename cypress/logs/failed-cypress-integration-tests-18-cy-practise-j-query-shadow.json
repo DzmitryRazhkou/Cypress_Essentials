@@ -1,0 +1,12 @@
+{
+  "specName": "cypress/integration/tests/18. Shadow root.js",
+  "title": "JQuery Shadow",
+  "suiteName": "CY Practise",
+  "testName": "CY Practise JQuery Shadow",
+  "testError": "Timed out retrying after 20000ms: expected '' to equal 'enter name'",
+  "testCommands": [
+    "visit https://selectorshub.com/xpath-practice-page/",
+    "get #userName",
+    "assert expected **''** to equal **enter name**"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "specName": "cypress/integration/tests/24. Sliders.js",
+  "title": "Cypress Drop Down Static JQuery",
+  "suiteName": "CY Practise",
+  "testName": "CY Practise Cypress Drop Down Static JQuery",
+  "testError": "The chainer `` was not found. Could not build assertion.",
+  "testCommands": [
+    "visit https://www.globalsqa.com/demo-site/sliders/#Range",
+    "uncaught exception TagError: adsbygoogle.push() error: Only one 'enable_page_level_ads' allowed per page.",
+    "get .resp-tab-content-active > p > .demo-frame",
+    "its .0.contentDocument.body",
+    "assert expected **<body>** not to be **empty**",
+    "wrap <body>",
+    "within ",
+    "wait 2000",
+    "get #slider-range span:nth-child(2)",
+    "invoke .attr()",
+    "should "
+  ]
+}
