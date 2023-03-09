@@ -13,3 +13,22 @@ describe("CY Practise", () => {
     cy.get("h3").should("have.text", "File Uploaded!");
   });
 });
+
+
+
+// describe('File Upload', () => {
+//   it('uploads a file correctly', () => {
+//     cy.visit('/upload')
+//     const filename = 'test-file.txt'
+//     cy.fixture(filename).then((fileContent) => {
+//       cy.get('[type="file"]').attachFile({
+//         fileContent,
+//         fileName: filename,
+//         mimeType: 'text/plain',
+//       })
+//       cy.get('[type="submit"]').click()
+//       cy.get('.success-message').should('be.visible')
+//     })
+//   })
+// })
+

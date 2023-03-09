@@ -1,5 +1,5 @@
-import loginPage from "../pages/LoginPage";
-import mainPage from "../pages/MainPage";
+import login_Page from "../pages/Login_Page";
+import main_Page from "../pages/Main_Page";
 
 const loginData = require("../../fixtures/koelLogin.json")
 
@@ -14,7 +14,7 @@ describe("KOEL Login Feature", () => {
         const email = loginData.email
         const psw = loginData.psw
 
-        loginPage.login(email, psw)
-        mainPage.validateMainPage()
+        login_Page.login(email, psw)
+        main_Page.validateMainPage()
     })
 })

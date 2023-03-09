@@ -48,6 +48,7 @@
   },
   "dependencies": {
     "cypress-downloadfile": "^1.2.3",
+    "cypress-real-events": "^1.7.6",
     "mysql": "github:mysqljs/mysql",
     "neat-csv": "^5.0.0",
     "radium": "^0.26.2",
