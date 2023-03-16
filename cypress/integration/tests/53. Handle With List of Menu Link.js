@@ -1,20 +1,18 @@
 describe("Cypress Handle Menu Link", () => {
     it("Verifies the Length And The Text of All th Menu Link Items", () => {
-        cy.visit("https://naveenautomationlabs.com/opencart/index.php?route=account/login")
+        cy.visit("https://naveenautomationlabs.com/opencart/index.php?")
 
         const listOfNames = [
-            "Account",
-            "Login",
-            "My Account",
-            "Order History",
-            "Wish List",
-            "Newsletter"
+            "MacBook",
+            "iPhone",
+            "Apple Cinema 30\"",
+            "Canon EOS 5D"
         ]
 
-        cy.get(":nth-child(4) > ul li a").should('have.length', 7)
-        cy.get(":nth-child(4) > ul li a").each(($el, index, list) => {
-            // cy.wrap($el).should("contain.text", listOfNames[index])
-            expect(Cypress.$($el).text()).to.eq(listOfNames[index])
+        cy.get("div[class='row']:nth-of-type(2) div div h4 a").should('have.length', 4)
+        cy.get("div[class='row']:nth-of-type(2) div div h4 a").each(($el, index, list) => {
+            cy.wrap($el).should("contain.text", listOfNames[index]) // Cypress Decision
+            expect(Cypress.$($el).text()).to.eq(listOfNames[index]) // JQuery
         })
     })
 })

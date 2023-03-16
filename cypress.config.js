@@ -35,6 +35,12 @@ module.exports = defineConfig({
             password: "pa$$01",
             database: "dbkoel",
         },
+        database: {
+            host: "localhost",
+            user: "root",
+            password: "",
+            database: "Cypress Test",
+        },
     },
 
     retries: {
@@ -43,6 +49,17 @@ module.exports = defineConfig({
 
     e2e: {
         setupNodeEvents(on, config) {
+            on("task", {
+                queryDb: (query) => {
+                    return queryTestDb(query, config);
+                },
+            });
+            on("task", {
+                queryDatabase: (query) => {
+                    return queryTestDatabase(query, config);
+                },
+            });
+
             on('task', {downloadFile})
             require("cypress-failed-log/on")(on);
             on("task", {
@@ -58,11 +75,6 @@ module.exports = defineConfig({
                         email: faker.internet.email(),
                         password: faker.internet.password()
                     };
-                },
-            });
-            on("task", {
-                queryDb: (query) => {
-                    return queryTestDb(query, config);
                 },
             });
             on("task", {
@@ -98,6 +110,24 @@ module.exports = defineConfig({
 function queryTestDb(query, config) {
     // create a new mysql connection using credentials from cypress.json env's
     const connection = mysql.createConnection(config.env.db);
+
+    // start connection to db
+    connection.connect();
+
+    // exec query + disconnect to db as a Promise
+    return new Promise((resolve, reject) => {
+        connection.query(query, (error, results) => {
+            if (error) reject(error);
+            else {
+                connection.end();
+                return resolve(results);
+            }
+        });
+    });
+}
+function queryTestDatabase(query, config) {
+    // create a new mysql connection using credentials from cypress.json env's
+    const connection = mysql.createConnection(config.env.database);
 
     // start connection to db
     connection.connect();
