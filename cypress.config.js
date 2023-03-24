@@ -125,6 +125,7 @@ function queryTestDb(query, config) {
         });
     });
 }
+
 function queryTestDatabase(query, config) {
     // create a new mysql connection using credentials from cypress.json env's
     const connection = mysql.createConnection(config.env.database);
