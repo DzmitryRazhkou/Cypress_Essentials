@@ -43,7 +43,7 @@ describe("CY Practise", () => {
         // cy.get(':nth-child(2) > .contact-detail').should("match", /^\d{9}$/)
     });
 
-    it.only("Get Text From A List Of Elements", () => {
+    it("Get Text From A List Of Elements", () => {
         const list = ['Chocolate', 'Apple', 'Eggs', 'Corn']
         const getText = ($el) => {
             return Cypress._.map(($el, 'innerText'))
@@ -57,5 +57,41 @@ describe("CY Practise", () => {
 
         // cy.get('#shopping>tbody>tr>td:nth-child(1)').should('have.length', 4).then(getText)
         //     .should('deep.equal', list)
+    });
+
+    it("Get Multiple Values From The Page Via Aliases And Test Context Properties", () => {
+        cy.visit("https://letcode.in/selectable");
+
+        function getFormTxt() {
+            cy.get(':nth-child(1) > #clour').invoke('text').as("first")
+            cy.get('#container > :nth-child(6)').invoke("text").as("second")
+            return cy.then(function () {
+                return {
+                    f: this.first,
+                    s: this.second
+                }
+            })
+        }
+
+        getFormTxt().should('deep.equal', {
+            f: "Selenium",
+            s: "Cypress"
+        })
+
+    });
+
+    it.only('Confirm The Total Sum Shown Under the Table', function () {
+        cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
+        cy.get("table[id='product']>tbody>tr>td:nth-child(3)").as("price")
+
+        cy.get("@price").should('have.length', 19)
+            .then(($cells) => {
+                const totals = $cells
+                    .toArray()
+                    .map((el) => el.innerText)
+                const sum = Cypress._.sum(totals)
+                cy.log(sum)
+            })
+
     });
 });

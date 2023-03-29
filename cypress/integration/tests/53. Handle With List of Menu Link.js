@@ -15,4 +15,17 @@ describe("Cypress Handle Menu Link", () => {
             expect(Cypress.$($el).text()).to.eq(listOfNames[index]) // JQuery
         })
     })
+    it.only("Find Text Item Without Flake Using cy.contains Command", () => {
+        cy.visit("https://naveenautomationlabs.com/opencart/index.php?")
+
+        const listOfNames = [
+            "MacBook",
+            "iPhone",
+            "Apple Cinema 30\"",
+            "Canon EOS 5D"
+        ]
+        listOfNames.forEach((item) => {
+            cy.contains("div[class='row']:nth-of-type(2) div div h4 a", item)
+        })
+    })
 })

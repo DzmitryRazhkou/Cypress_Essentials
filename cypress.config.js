@@ -8,6 +8,7 @@ const xlsx = require('node-xlsx').default;
 const fs = require('fs'); // for file
 const path = require('path'); // for file path
 const readXlsx = require('./cypress/support/read_xlsx')
+const {rmdir} = require('fs')
 
 module.exports = defineConfig({
     chromeWebSecurity: false,
@@ -41,6 +42,8 @@ module.exports = defineConfig({
             password: "",
             database: "Cypress Test",
         },
+        email: "dimagadjilla@gmail.com",
+        psw: ""
     },
 
     retries: {
@@ -49,6 +52,15 @@ module.exports = defineConfig({
 
     e2e: {
         setupNodeEvents(on, config) {
+            on("task", {
+                deleteDownloads() {
+                    return new Promise(resolve => {
+                        rmdir("/Users/dzmitryrazhkou/Downloads/", () => {
+                            resolve(null)
+                        })
+                    })
+                }
+            })
             on("task", {
                 queryDb: (query) => {
                     return queryTestDb(query, config);

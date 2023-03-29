@@ -15,7 +15,7 @@ describe("CY Practise", () => {
         cy.get("input[type='submit']").click()
         cy.get('.breadcrumb > :nth-child(2) > a').should('have.text', "Account")
     });
-    it("Cypress Fixture - Fixture JSON on the Suite Level", () => {
+    it.only("Cypress Fixture - Fixture JSON on the Suite Level", () => {
         cy.visit("https://naveenautomationlabs.com/opencart/index.php?route=account/login");
         cy.get("#input-email").type(userDetails.email)
         cy.get("#input-password").type(userDetails.password)
