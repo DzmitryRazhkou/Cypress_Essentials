@@ -4,6 +4,13 @@ describe("CY Practise", () => {
     cy.get("button[onclick='jsAlert()']").click();
     cy.on("window:alert", (str) => {
       expect(str).to.equal("I am a JS Alert");
+
+    //   cy.window().then((win) => {
+      //   cy.stub(win, 'alert').as("alert")
+      //   })
+    //   cy.get("#fg).click()
+    //   cy.get("@alert").should('have.been.calledOnce')
+
     });
   });
 

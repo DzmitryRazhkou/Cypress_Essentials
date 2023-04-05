@@ -1,8 +1,0 @@
-{
-  "specName": "cypress/integration/tests/13. Write and Read file.js",
-  "title": "Cypress Read File",
-  "suiteName": "CY Practise",
-  "testName": "CY Practise Cypress Read File",
-  "testError": "cy.read is not a function",
-  "testCommands": []
-}

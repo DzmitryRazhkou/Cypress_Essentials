@@ -1,8 +1,0 @@
-{
-  "specName": "cypress/integration/tests/13. Write and Read file.js",
-  "title": "Sauce Demo",
-  "suiteName": "CY Practise",
-  "testName": "CY Practise Sauce Demo",
-  "testError": "sauce is not defined",
-  "testCommands": []
-}
