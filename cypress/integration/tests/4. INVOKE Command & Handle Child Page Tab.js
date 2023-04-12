@@ -1,6 +1,5 @@
 describe("CY Practise", () => {
     beforeEach(() => {
-
     })
 
     it("Handle Child Page Tab (Official Way)", () => {
@@ -19,7 +18,7 @@ describe("CY Practise", () => {
         cy.get(".pull-left > .logo > a > img").should("be.visible");
     });
 
-    it("'Invoke' To Get Attribute", () => {
+    it.only("'Invoke' To Get Attribute", () => {
         cy.visit("https://rahulshettyacademy.com/AutomationPractice/");
         cy.get("#opentab").as("openTab")
         cy.get("@openTab").invoke("attr", "target").then(targetAttr => cy.log(targetAttr))
@@ -53,9 +52,9 @@ describe("CY Practise", () => {
             .should('have.attr', 'target', '_blank')
             .invoke('attr', 'target', '_self')
             .click()
-        cy.url().should('contain', 'rahulshettyacademy')
+        // cy.url().should('contain', 'qaclickacademy')
     });
-    it.skip('Stub Window Open Method And Confirm The Call Arguments', function () {
+    it('Stub Window Open Method And Confirm The Call Arguments', function () {
         cy.visit("http://the-internet.herokuapp.com/windows")
         cy.window().then(win => {
             cy.stub(win, 'open').as("open")

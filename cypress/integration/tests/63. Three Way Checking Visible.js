@@ -21,10 +21,14 @@ describe("Three Way Getting Element Visible", () => {
         cy.contains("div[class='card-content']>div", "What is inside the text box")
         cy.get('.label:contains("What is inside the text box")')
     });
-    it('Get Value All Field', function () {
-        cy.get("div[class='card-content']>div>div>input").then(($inputs) => Cypress._.map($inputs, (el) => el.value)).then(console.log)
+    it.only('Get Value All Field', function () {
+        cy.get("div[class='card-content']>div>div>input")
+            .then(($inputs) =>
+                Cypress._.map($inputs, (el) =>
+                    el.value))
+            .then(console.log)
     });
-    it.only('Check Visibility Of Many Elements', function () {
+    it('Check Visibility Of Many Elements', function () {
         cy.get("div[class='card-content']>div>div>input").then(($el) => Cypress._.map($el, Cypress.dom.isVisible)).should('deep.equal', [true, true, true, true, true, true])
 
         //     Or

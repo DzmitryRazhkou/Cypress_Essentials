@@ -15,4 +15,21 @@ describe("CY Practise", () => {
             }
         });
     });
+    it.only('Handle Tables Include Text', function () {
+        const tool = "Selenium"
+        cy.visit('https://letcode.in/selectable')
+        cy.get('#container>div>h3')
+            .should(Cypress.dom.isVisible)
+            .and('have.length', 9)
+            .as("table")
+        cy.get("@table").each(($el, index) => {
+            const arrayOfTxt = $el.text()
+            if (arrayOfTxt.includes(tool)) {
+                cy.get("@table")
+                    .eq(index)
+                    .invoke('text')
+                    .should('equal', tool)
+            }
+        })
+    });
 });

@@ -4,8 +4,6 @@ describe("CY Practise", () => {
   });
 
   it("cy.document", () => {
-    cy.visit("https://www.globalsqa.com/");
-
     cy.document().then((doc) => {
       const titleTxt = doc.title;
       cy.log(titleTxt);
@@ -17,7 +15,6 @@ describe("CY Practise", () => {
 
   it("cy.title", () => {
     cy.visit("https://www.globalsqa.com/");
-
     cy.title().then((txt) => {
       expect(txt).to.equal("CheatSheets, Mindmaps, Free Ebooks- GlobalSQA");
     });

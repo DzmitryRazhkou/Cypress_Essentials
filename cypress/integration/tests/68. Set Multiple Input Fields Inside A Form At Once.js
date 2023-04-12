@@ -5,11 +5,11 @@ describe('Set Multiple Input Fields Inside A Form At Once', () => {
     it('Cypress Way', function () {
         cy.get('#fullName').type("Philadelphia, PA")
     });
-    it('Cypress Invoke Way', function () {
+    it.only('Cypress Invoke Way', function () {
         cy.get('#fullName').invoke('val', "Philadelphia, PA")
     });
 
-    it.only('Cypress Document Invoke Way', function () {
+    it('Cypress Document Invoke Way', function () {
         cy.document().its("input[id='fullName']")
     });
 })

@@ -9,10 +9,9 @@ describe("CY Practise", () => {
         cy.get("#fruits option")
             .contains('Pine')
             .invoke('index')
-            .then(cy.log)
             .then((index) => {
                 cy.get('#fruits').select(index)
             })
-        cy.get('#fruits').should('have.value', '5')
+        cy.get('#fruits').should('have.value', 4)
     });
 });

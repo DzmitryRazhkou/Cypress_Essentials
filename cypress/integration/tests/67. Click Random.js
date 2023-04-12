@@ -3,7 +3,6 @@ describe('Click Cypress Random', () => {
         cy.visit("https://www.globalsqa.com/demo-site/accordion-and-tabs/")
     })
     it('CYPRESS Random', function () {
-
         cy.get("iframe[class='demo-frame lazyloaded']")
             .should('be.visible')
             .then(($iframe) => {

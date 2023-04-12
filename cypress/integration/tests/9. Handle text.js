@@ -54,12 +54,12 @@ describe("CY Practise", () => {
         cy.get('#shopping>tbody>tr>td:nth-child(1)').then(($el) => {
             return Cypress._.map($el, 'innerText')
         }).should('deep.equal', list)
-
+        //
         // cy.get('#shopping>tbody>tr>td:nth-child(1)').should('have.length', 4).then(getText)
         //     .should('deep.equal', list)
     });
 
-    it("Get Multiple Values From The Page Via Aliases And Test Context Properties", () => {
+    it.only("Get Multiple Values From The Page Via Aliases And Test Context Properties", () => {
         cy.visit("https://letcode.in/selectable");
 
         function getFormTxt() {
@@ -80,7 +80,7 @@ describe("CY Practise", () => {
 
     });
 
-    it.only('Confirm The Total Sum Shown Under the Table', function () {
+    it('Confirm The Total Sum Shown Under the Table', function () {
         cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
         cy.get("table[id='product']>tbody>tr>td:nth-child(3)").as("price")
 

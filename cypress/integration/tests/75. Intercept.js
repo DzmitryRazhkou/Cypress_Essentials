@@ -1,5 +1,5 @@
 describe("CY Intercept", () => {
-    it('Intercept KOEL', function () {
+    it.only('Intercept KOEL', function () {
         const email = "dimagadjilla@gmail.com"
         const psw = "te$t$tudent"
         let id
@@ -42,7 +42,7 @@ describe("CY Intercept", () => {
         cy.visit('https://jsonplaceholder.cypress.io/users')
     });
 
-    it.only('JSON Placeholder Mocking', () => {
+    it('JSON Placeholder Mocking', () => {
         cy.visit('https://jsonplaceholder.typicode.com/')
         cy.intercept('/posts', (req) => {
             return Cypress.Promise.delay(5000).then(() => req.continue())

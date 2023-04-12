@@ -13,7 +13,6 @@ it("Array Last Thru 'At'", function () {
 it("Array Last Thru 'Invoke'", function () {
     const list = [1, 2, 3]
     cy.wrap(list).invoke('at', -1).should('equal', 3)
-
     cy.wrap(list).then(Cypress._.last).should('equal', 3)
 });
 it.only('Validate Each Array Item', function () {

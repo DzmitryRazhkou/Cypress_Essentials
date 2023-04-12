@@ -29,9 +29,8 @@ describe("CY Practise", () => {
             spn.hide();
         });
     });
-    it("Randomly Pick Two Checkboxes Out Of Four And Click On Them", () => {
+    it.only("Randomly Pick Two Checkboxes Out Of Four And Click On Them", () => {
         cy.visit("https://rahulshettyacademy.com/AutomationPractice/");
-
         cy.get("#checkbox-example>fieldset>label>input")
             .should('be.visible')
             .and('have.length', 3)
@@ -55,7 +54,7 @@ describe("CY Practise", () => {
             })
 
     });
-    it.only('jQuery :has and :contains Selectors in Cypress Tests', function () {
+    it('jQuery :has and :contains Selectors in Cypress Tests', function () {
         cy.visit("http://the-internet.herokuapp.com/status_codes")
         cy.get('li:has(a:contains("404"))')
         // cy.get('li:has(.label:contains("New"))')

@@ -1,5 +1,5 @@
 describe("Cypress Handle Menu Link", () => {
-    it("Verifies the Length And The Text of All th Menu Link Items", () => {
+    it.only("Verifies the Length And The Text of All th Menu Link Items", () => {
         cy.visit("https://naveenautomationlabs.com/opencart/index.php?")
 
         const listOfNames = [
@@ -15,7 +15,7 @@ describe("Cypress Handle Menu Link", () => {
             expect(Cypress.$($el).text()).to.eq(listOfNames[index]) // JQuery
         })
     })
-    it.only("Find Text Item Without Flake Using cy.contains Command", () => {
+    it("Find Text Item Without Flake Using cy.contains Command", () => {
         cy.visit("https://naveenautomationlabs.com/opencart/index.php?")
 
         const listOfNames = [
