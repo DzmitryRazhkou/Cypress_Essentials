@@ -26,7 +26,7 @@ describe("Cypress Handle Menu Link", () => {
             ) {
 
             } else {
-                throw  new Error(('Missing Shit'))
+                throw new Error(('Missing Shit'))
             }
         }
 

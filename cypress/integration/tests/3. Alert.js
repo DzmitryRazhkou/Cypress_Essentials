@@ -20,7 +20,7 @@ describe("CY Practise", () => {
                 expect(stub.getCall(0)).to.be.calledWithExactly("I am a JS Alert");
             });
     });
-    it("JS Confirm 'Cypress Stub'", () => {
+    it.only("JS Confirm 'Cypress Stub'", () => {
         cy.window().then((win) => {
             cy.stub(win, 'confirm').as("alert")
         })

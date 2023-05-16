@@ -86,9 +86,7 @@ describe("CY Practise", () => {
 
         cy.get("@price").should('have.length', 19)
             .then(($cells) => {
-                const totals = $cells
-                    .toArray()
-                    .map((el) => el.innerText)
+                const totals = $cells.map((el) => el.innerText)
                 const sum = Cypress._.sum(totals)
                 cy.log(sum)
             })

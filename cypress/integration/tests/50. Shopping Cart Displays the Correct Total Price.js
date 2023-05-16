@@ -8,7 +8,10 @@ describe('Shopping Cart', () => {
         })
         cy.get('.total-price').then(($total) => {
             const total = parseFloat($total.text())
-            const expectedTotal = Cypress.$('.item-price').toArray().reduce((sum, el) => sum + parseFloat(el.innerText), 0)
+            const expectedTotal = Cypress.$('.item-price')
+                .toArray()
+                .reduce((sum, el) =>
+                    sum + parseFloat(el.innerText), 0)
             expect(total).to.equal(expectedTotal)
         })
     })
