@@ -58,7 +58,6 @@ describe("CY Practise", () => {
         // cy.get('#shopping>tbody>tr>td:nth-child(1)').should('have.length', 4).then(getText)
         //     .should('deep.equal', list)
     });
-
     it.only("Get Multiple Values From The Page Via Aliases And Test Context Properties", () => {
         cy.visit("https://letcode.in/selectable");
 
@@ -79,7 +78,6 @@ describe("CY Practise", () => {
         })
 
     });
-
     it('Confirm The Total Sum Shown Under the Table', function () {
         cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
         cy.get("table[id='product']>tbody>tr>td:nth-child(3)").as("price")
@@ -92,4 +90,20 @@ describe("CY Practise", () => {
             })
 
     });
+    it.skip('Confirm The Total Sum Shown Under the Table', function () {
+        cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
+        cy.get("table[id='product']>tbody>tr>td:nth-child(3)").as("price")
+
+        cy.get("@price").should('have.length', 19)
+            .then(($cells) => {
+                const text = [...$cells].map((el) => el.innerText)
+                const found = text.includes("Lemon")
+                return found
+            }).then(found => {
+            if (!found) {
+            //
+            }
+        })
+    });
+
 });
