@@ -3,6 +3,7 @@ const {faker} = require('@faker-js/faker'); /// See this shit
 const {downloadFile} = require('cypress-downloadfile/lib/addPlugin')
 const mysql = require("mysql")
 const XLSX = require("xlsx") // "xlsx": "^0.18.5"
+const allureWriter = require('@shelex/cypress-allure-plugin/writer');
 
 const xlsx = require('node-xlsx').default;
 const fs = require('fs'); // for file
@@ -52,6 +53,7 @@ module.exports = defineConfig({
 
     e2e: {
         setupNodeEvents(on, config) {
+            allureWriter(on, config);
             on("task", {
                 deleteDownloads() {
                     return new Promise(resolve => {
