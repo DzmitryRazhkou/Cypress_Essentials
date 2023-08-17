@@ -11,6 +11,6 @@ describe("CY Practise", () => {
         cy.get("#selectable>li")
             .not(":visible")
             .should('have.length', 1)
-            .and('have.text', 'second')
+            .and('have.', 'second')
     });
 });
