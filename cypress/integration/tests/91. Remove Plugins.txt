@@ -1,0 +1,37 @@
+To uninstall Cypress plugins step by step using commands, follow these instructions:
+1. **Navigate to Your Cypress Project:**
+
+Open a terminal or command prompt and navigate to the root directory of your Cypress project where your `package.json` file is located.
+2. **List Installed Plugins:**
+
+You can list the installed Cypress plugins in your project by running the following command:
+   npm ls --depth=0 | grep cypress-
+
+This command will display a list of installed Cypress plugins that start with the "cypress-" prefix.
+3. **Uninstall the Desired Plugin:**
+
+To uninstall a specific Cypress plugin, use the `npm uninstall` command followed by the plugin's name. Replace `plugin-name` with the name of the plugin you want to uninstall:
+   npm uninstall cypress-plugin-name
+
+For example, if you want to uninstall a plugin named "cypress-plugin-example," you would run:
+   npm uninstall cypress-plugin-example
+
+4. **Remove Plugin from `package.json`:**
+After uninstalling the plugin, check your `package.json` file for any lingering references to the uninstalled plugin in the `devDependencies` section. Remove the corresponding entry manually if it's still there.
+
+5. **Clean Your Project (Optional):**
+
+Depending on the specific plugin, it may leave behind configuration files or artifacts. To ensure a clean removal, you can manually delete any related files or directories if needed.
+6. **Reinstall Dependencies:**
+
+After uninstalling the plugin and making any necessary changes to your project, it's a good practice to reinstall your project's dependencies to ensure everything is up to date:
+   npm install
+
+This command will reinstall all the remaining dependencies, including Cypress itself.
+7. **Verify Uninstallation:**
+
+To verify that the plugin has been successfully uninstalled and is no longer in use, you can run your Cypress tests to ensure they execute without any issues. If the plugin was removed correctly, it should not affect your test suite.
+By following these steps and commands, you can effectively uninstall Cypress plugins from your project. Remember to replace `cypress-plugin-name` with the actual name of the plugin you want to uninstall.
+
+8. To Check Plugin Version:
+   npm list | grep @cypress/grep

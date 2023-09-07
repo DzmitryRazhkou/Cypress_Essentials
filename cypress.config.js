@@ -21,7 +21,7 @@ module.exports = defineConfig({
     screenshotsFolder: "cypress/reports/screenshots",
     experimentalWebKitSupport: true,
 
-    "reporter": "cypress-multi-reporters",
+    // "reporter": "cypress-multi-reporters",
     "reporterOptions": {
         "reporterEnabled": "mochawesome", "mochawesomeReporterOptions": {
             "reportDir": "cypress/results/mochawesome", "quite": true, "overwrite": false, "html": false, "json": true

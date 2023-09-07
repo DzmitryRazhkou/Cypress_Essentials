@@ -8,6 +8,8 @@
 // You can change the location of this file or turn off
 // automatically serving support files with the
 // 'supportFile' configuration option.
+const registerCypressGrep = require('@bahmutov/cy-grep')
+registerCypressGrep()
 
 const origLog = Cypress.log;
 Cypress.log = function (opts, ...other) {
