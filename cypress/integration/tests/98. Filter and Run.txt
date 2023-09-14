@@ -1,0 +1,14 @@
+1. Create JSON File:
+{
+  "specs": [
+    "cypress/e2e/tests/orders/default-order-form/aws-codebuld-parallel/address-autocomplete-usa.cy.js",
+    "cypress/e2e/tests/orders/default-order-form/aws-codebuld-parallel/address-autocomplete-canada.cy.js",
+    "cypress/e2e/tests/orders/default-order-form/aws-codebuld-parallel/address-autocomplete-australia.cy.js",
+    "cypress/e2e/tests/orders/default-order-form/aws-codebuld-parallel/address-autocomplete-uk.cy.js",
+    "cypress/e2e/tests/orders/default-order-form/aws-codebuld-parallel/address-autocomplete-sa.cy.js",
+    "cypress/e2e/tests/orders/default-order-form/aws-codebuld-parallel/address-autocomplete-france.cy.js",
+    "cypress/e2e/tests/orders/default-order-form/aws-codebuld-parallel/address-autocomplete-israel.cy.js",
+    "cypress/e2e/tests/orders/default-order-form/aws-codebuld-parallel/address-autocomplete-switzerland.cy.js",
+    ]
+
+2. Script: "run-cypress-specs": "cypress run --spec $(node -e \"console.log(require('./cypress-specs.json').specs.join(','))\")"
