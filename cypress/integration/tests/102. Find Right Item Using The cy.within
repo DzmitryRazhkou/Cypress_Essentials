@@ -1,0 +1,40 @@
+<ul id="items">
+    <h2>All products</h2>
+    <li data-product-id="190" data-price="299">Apples</li>
+    <li data-product-id="975" data-price="399">Grapes</li>
+</ul>
+
+cy.get('#items').within(() => {
+  cy.get('li').should('have.length.above', 2)
+  cy.contains('li', 'Grapes')
+    .should('have.attr', 'data-product-id', '190')
+    .and('have.attr', 'data-price', '299')
+})
+
+// OR
+
+cy.contains('#items li', 'Grapes')
+  .should('have.attr', 'data-product-id', '190')
+  .and('have.attr', 'data-price', '299')
+
+// OR
+
+cy.contains('#items li', 'Grapes')
+  .should('have.prop', 'dataset')
+  .then(JSON.stringify)
+  .then(JSON.parse)
+  .then(console.log)
+.should('deep.equal', {
+  productId: '190',
+  price: '299'
+})
+
+// OR
+
+cy.contains('#items li', 'Grapes')
+  .should('have.prop', 'dataset')
+.toPlainObject()
+.should('deep.equal', {
+  productId: '190',
+  price: '299'
+})

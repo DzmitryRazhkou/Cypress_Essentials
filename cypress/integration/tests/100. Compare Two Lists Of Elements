@@ -1,0 +1,113 @@
+1. EXAMPLE
+
+<ol id='first'>
+   <li>Apples</li>
+   <li>Oranges</li>
+   <li>Melons</li>
+   <li>Grapes</li>
+</ol>
+
+<ol id='second'>
+   <li>Apples</li>
+   <li>Oranges</li>
+   <li>Melons</li>
+   <li>Grapes</li>
+</ol>
+
+cy.get('#first li')
+  .map('innerText')
+  .then((list) => {
+  cy.get('#second li')
+    .map('innerText')
+    .should('deep.equal', list)
+  })
+
+  ______________________________
+
+  2. EXAMPLE
+
+  <ol id='first'>
+     <li>Apples</li>
+     <li>Oranges</li>
+     <li>Melons</li>
+     <li>Grapes</li>
+  </ol>
+
+  <ol id='second'>
+     <li>Grapes</li>
+     <li>Oranges</li>
+     <li>Melons</li>
+     <li>Apples</li>
+  </ol>
+
+  cy.get('#first li')
+    .map('innerText')
+    .then((list) => {
+    cy.get('#second li')
+      .map('innerText')
+      .should('have.all.members', list)
+    })
+
+
+3. EXAMPLE
+
+      <ol id='first'>
+         <li>Apples</li>
+         <li>Oranges</li>
+      </ol>
+
+      <ol id='second'>
+         <li>Grapes</li>
+         <li>Oranges</li>
+         <li>Melons</li>
+         <li>Apples</li>
+      </ol>
+
+      cy.get('#second li')
+        .map('innerText')
+        .then((list) => {
+        cy.get('#second li')
+          .map('innerText')
+          .should('includes.all.members', list)
+        })
+
+
+4. EXAMPLE
+
+      <ol id='first'>
+         <li>Apples</li>
+         <li>Oranges</li>
+      </ol>
+
+      <ol id='second'>
+         <li>Grapes</li>
+         <li>Oranges</li>
+         <li>Melons</li>
+         <li>Apples</li>
+      </ol>
+
+cy.get('#first', '#second').should(($el) => {
+  const [first, second] = $el
+  const firstList = [...first.querySelectorAll('li')].map(
+     (el) => el.innerText,
+  )
+  const firstList = [...second.querySelectorAll('li')].map(
+     (el) => el.innerText,
+  )
+  expect(firstList, 'compare lists').to.do.equal
+  (secondList)
+})
+
+// OR
+
+cy.get('#first', '#second').should(($el) => {
+  const [first, second] = $el
+  const firstList = Cypress._.map(first.querySelectorAll
+    ('li'), 'innerText')
+ )
+  const firstList = Cypress._.map(second.querySelectorAll
+    ('li'), 'innerText')
+  )
+    expect(firstList, 'compare lists').to.do.equal
+    (secondList)
+)

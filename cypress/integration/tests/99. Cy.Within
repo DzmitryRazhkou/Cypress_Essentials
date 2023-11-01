@@ -1,0 +1,24 @@
+<div id="main">
+  <div id='shipping'>
+     <div>Loading...</div>
+  <div>
+</div>
+
+<script>
+  setTimeout(() => {
+   document.getElementById('main').innerHTML = `
+    <div id='shipping'>
+      <div><strong>Cost</strong></div>
+      <div id='cost'>$2.99</div>
+    </div>
+   `
+  }, 1000)
+  </script>
+
+
+  cy.get('#shipping')
+    .should('be.visible')
+    .within(() => {
+      cy.contains('#cost', '$2.99')
+    }
+    ))

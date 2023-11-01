@@ -1,0 +1,96 @@
+// HTML:
+
+<main>
+   <ul>
+      <li>
+         <h2>Project A</h2>
+         <div>10 issues</div>
+         <div>10 events in the last 24 hours</div>
+         <div>stable</div>
+         <a href="/dashboard/issues">issues</a>
+      </li>
+      <li>
+         <h2>Project B</h2>
+         <div>10 issues</div>
+         <div>10 event in the last 24 hours</div>
+         <div>error</div>
+         <a href="/dashboard/issues">issues</a>
+      </li>
+      <li>
+         <h2>Project C</h2>
+         <div>100 issues</div>
+         <div>10 events in the last 24 hours</div>
+         <div>critical</div>
+         <a href="/dashboard/issues">issues</a>
+      </li>
+   </ul>
+</main>
+
+const mockProjects = [
+   {
+      name: 'Projects: 10',
+      numEvents240: 4,
+      status: 'stable'
+   },
+   {
+      name: 'Projects: 10',
+      numEvents240: 4,
+      status: 'error'
+   },
+   {
+      name: 'Projects: 10',
+      numEvents240: 10,
+      status: 'critical'
+   }
+]
+
+
+cy.get('main')
+  .find('li')
+  .each(($el, index) => {
+     cy.wrap($el).contains(mockProjects[index].name)
+     cy.wrap($el).contains(mockProjects[index].numEvents240)
+     cy.wrap($el).contains(mockProjects[index].status)
+     cy.wrap($el)
+       .find('a')
+       .should('have.attr', 'href', '/dashboard/issues')
+  })
+
+
+ // Better Solution:
+
+ cy.get('main')
+   .find('li')
+   .each(($el, index) => {
+   const {name, numEvents240, status} = mockProjects[index]
+
+   expect($el)
+     .to.include.text(name)
+     .and.to.include.text(numEvents240)
+     .and.to.include.text(status)
+      cy.wrap($el)
+        .find('a')
+        .should('have.attr', 'href', '/dashboard/issues')
+   })
+
+   // OR EVEN BETTER:
+
+ cy.get('main')
+   .find('li')
+   .each(($el, index) => {
+   const {name, numEvents240, status} = mockProjects[index]
+
+   cy.wrap($el).within(() => {
+     cy.contains(name)
+     cy.contains(numEvents240)
+     cy.contains(status)
+     cy.get('a[href='/dashboard/issues']')
+   })
+   expect($el)
+     .to.include.text(name)
+     .and.to.include.text(numEvents240)
+     .and.to.include.text(status)
+      cy.wrap($el)
+        .find('a')
+        .should('have.attr', 'href', '')
+   })
